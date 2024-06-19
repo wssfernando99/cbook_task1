@@ -33,7 +33,8 @@ class ProductController extends Controller
     return view('productupdate', compact('product'));   
    }
 
-   public function update(Request $request, Product $product){
+   public function update(Request $request, Product $product,$id){
+    $product = Product::find($id);
     $product->update([
         "name"=> $request->name,
         "description"=> $request->description,
