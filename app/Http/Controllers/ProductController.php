@@ -42,6 +42,11 @@ class ProductController extends Controller
 
     return response()->json(["message"=> "Record Updated"]);
     }
+
+    public function view(){
+        $product = Product::all();
+        return $product;
+    }
 }
 
  /**
