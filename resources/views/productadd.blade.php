@@ -8,7 +8,7 @@
 
     </head>
     <body>
-        <form method="POST" action={{ url('product') }}>
+        <form method="POST" action={{ url('/add') }}>
             @csrf
             <div >
               <label for="exampleInputCategory" class="form-label">Name</label>
