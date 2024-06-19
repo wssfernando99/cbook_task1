@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="POST" action={{ url('product/'.$product->id) }}>
+    <form method="POST" action="{{ route('update',$product->id) }}">
         @method('PUT')
         @csrf
         <div >
@@ -23,7 +23,7 @@
         
         <button type="submit" >Submit</button>
       </form>
-      <form method="POST" action="{{url('product/'.$product->id) }}">
+      <form method="POST">
         @csrf
         @method('DELETE') 
         <button type="submit" >Delete</button>

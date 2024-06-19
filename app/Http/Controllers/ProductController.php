@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+   
     public function create(){
         return view("productadd");
     }
@@ -26,6 +27,21 @@ class ProductController extends Controller
     
     return response()->json(["message"=>"Successfully added"]);
    }
+
+   public function edit($id, Product $product){
+    $product = Product::find($id);
+    return view('productupdate', compact('product'));   
+   }
+
+   public function update(Request $request, Product $product){
+    $product->update([
+        "name"=> $request->name,
+        "description"=> $request->description,
+        "quantity"=> $request->quantity
+    ]);
+
+    return response()->json(["message"=> "Record Updated"]);
+    }
 }
 
  /**
