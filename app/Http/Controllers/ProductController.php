@@ -47,8 +47,13 @@ class ProductController extends Controller
         $product = Product::all();
         return $product;
     }
-}
 
+    public function destroy(Product $product, $id){
+        $product = Product::find($id);
+        $product->delete();
+        return response()->json(["message"=> "Record deleted"]);
+    }
+}
  /**
      * Display a listing of the resource.
      */

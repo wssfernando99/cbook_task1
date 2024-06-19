@@ -23,7 +23,7 @@
         
         <button type="submit" >Submit</button>
       </form>
-      <form method="POST">
+      <form method="POST" action="{{ route('delete',$product->id) }}">
         @csrf
         @method('DELETE') 
         <button type="submit" >Delete</button>

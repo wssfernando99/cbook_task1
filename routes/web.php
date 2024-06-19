@@ -9,6 +9,7 @@ Route::get('/create', [ProductController::class, 'create']);
 Route::put('/{id}/update', [ProductController::class, 'update'])->name('update');
 Route::get('/{id}/edit', [ProductController::class, 'edit']);
 Route::get('/view', [ProductController::class, 'view']);
+Route::delete('/{id}/delete', [ProductController::class,'destroy'])->name('delete');
 
 
 
